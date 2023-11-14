@@ -1,0 +1,29 @@
+name: Console.log Check
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  check-console-log:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+
+    - name: Install Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: 14
+
+    - name: Install Dependencies
+      run: npm install
+
+    - name: Check for Console.log
+      run: |
+        if grep -r --include=\*.{js,jsx,ts,tsx} 'console\.log' .; then
+          echo "Erro: Não é permitido código com 'console.log'."
+          exit 1
+        fi
