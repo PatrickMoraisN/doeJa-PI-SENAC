@@ -3,7 +3,7 @@ name: Console.log Check
 on:
   push:
     branches:
-      - master
+      - '*'
 
 jobs:
   check-console-log:
