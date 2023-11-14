@@ -55,3 +55,4 @@ export interface Food {
 export type FoodsListProps = Food[];
 
 console.log("teste")
+console.log("teste2")
