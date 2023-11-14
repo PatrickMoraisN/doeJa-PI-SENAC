@@ -53,3 +53,5 @@ export interface Food {
 }
 
 export type FoodsListProps = Food[];
+
+console.log("teste")
